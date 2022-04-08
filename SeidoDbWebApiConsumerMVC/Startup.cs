@@ -28,7 +28,6 @@ namespace SeidoDb.Web
 			app.UseEndpoints(endpoint =>
 			{
 				endpoint.MapRazorPages();		//Enables Razorpages
-				endpoint.MapGet("/hello", () => $"Hello World at {DateTime.Now}");
 			});
 		}
 	}
