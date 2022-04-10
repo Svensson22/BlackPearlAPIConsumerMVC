@@ -1,12 +1,10 @@
 ﻿@page
 @functions
 {
-  public string? DayName { get; set; }
 
   public void OnGet()
   {
     ViewData["Title"] = "Welcome ASP.NET Core!";    //Read by the _Layout
-    Model.DayName = DateTime.Now.ToString("dddd");
   }
 }
 <!-- page directive above enables Razor pages -->
@@ -17,7 +15,7 @@
     <h1 class="display-3">Welcome to SeidoDb.Web</h1>
     <p class="lead">An ASP.NET Core Web client for demonstration</p>
     <hr />
-    <h2>This is a Razor page. Weekday today is @Model.DayName</h2>
+    <h2>This is a Razor page.</h2>
     <p>Step by step we will to use Razorpages to demonstrate connection to SeidoDB using SeidoDbCrude Repository and a RESTFul connection to SeidoDbWebApi Service.</p>
     <p>
         <a class="btn btn-primary"
