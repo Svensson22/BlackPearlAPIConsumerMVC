@@ -27,7 +27,7 @@ namespace SeidoDb.Web
 
 			app.UseEndpoints(endpoint =>
 			{
-				endpoint.MapRazorPages();		//Enables Razorpages
+				endpoint.MapRazorPages();		//Enables Razorpages.
 			});
 		}
 	}
