@@ -18,57 +18,57 @@ namespace SeidoDbWebApiConsumerMVC.Services
             _headers = new Dictionary<string, string>();
         }
 
-        public async Task<IEnumerable<ICustomer>> GetCustomersAsync()
+        public async Task<IEnumerable<Necklace>> GetNecklacesAsync()
         {
-            var url = new Uri(_baseUri, "/api/customers");
-            var response = await SendRequestAsync<List<Customer>>(url, HttpMethod.Get, _headers);
+            var url = new Uri(_baseUri, "/api/necklace");
+            var response = await SendRequestAsync<List<Necklace>>(url, HttpMethod.Get, _headers);
 
             return response;
         }
 
-        public async Task<ICustomer> GetCustomerAsync(Guid custId)
+        public async Task<Necklace> GetNecklacesAsync(int neckId)
         {
-            var url = new Uri(_baseUri, $"/api/customers/{custId}");
-            var response = await SendRequestAsync<Customer>(url, HttpMethod.Get, _headers);
+            var url = new Uri(_baseUri, $"/api/necklace/{neckId}");
+            var response = await SendRequestAsync<Necklace>(url, HttpMethod.Get, _headers);
 
             return response;
         }
 
-        public async Task<ICustomer> UpdateCustomerAsync(Customer cus)
+        public async Task<Necklace> UpdateNecklaceAsync(Necklace neck)
         {
-            var url = new Uri(_baseUri, $"/api/customers/{cus.CustomerID}");
+            var url = new Uri(_baseUri, $"/api/necklace/{neck.NecklaceID}");
 
-            //Confirm customer exisit in Database
-            var cusToUpdate = await SendRequestAsync<Customer>(url, HttpMethod.Get, _headers);
-            if (cusToUpdate == null)
-                return null;  //Customer does not exist
+            //Confirm necklace exisit in Database
+            var neckToUpdate = await SendRequestAsync<Necklace>(url, HttpMethod.Get, _headers);
+            if (neckToUpdate == null)
+                return null;  //Necklace does not exist
 
-            //Update Customer, always gives null response, NonSuccess response errors are thrown
-            await SendRequestAsync<Customer>(url, HttpMethod.Put, _headers, cus);
+            //Update Necklace, always gives null response, NonSuccess response errors are thrown
+            await SendRequestAsync<Necklace>(url, HttpMethod.Put, _headers, neck);
 
-            return cus;
+            return neck;
         }
 
-        public async Task<ICustomer> CreateCustomerAsync(Customer cus)
+        public async Task<Necklace> CreateNecklaceAsync(Necklace neck)
         {
-            var url = new Uri(_baseUri, "/api/customers");
-            var response = await SendRequestAsync<Customer>(url, HttpMethod.Post, _headers, cus);
+            var url = new Uri(_baseUri, "/api/necklace");
+            var response = await SendRequestAsync<Necklace>(url, HttpMethod.Post, _headers, neck);
 
             return response;
         }
 
-        public async Task<ICustomer> DeleteCustomerAsync(Guid custId)
+        public async Task<Necklace> DeleteNecklaceAsync(int neckId)
         {
-            var url = new Uri(_baseUri, $"/api/customers/{custId}");
+            var url = new Uri(_baseUri, $"/api/necklace/{neckId}");
 
-            //Confirm customer exisit in Database
-            var cusToDel = await SendRequestAsync<Customer>(url, HttpMethod.Get, _headers);
-            if (cusToDel == null)
-                return null;  //Customer does not exist
+            //Confirm necklace exisit in Database
+            var neckToDel = await SendRequestAsync<Necklace>(url, HttpMethod.Get, _headers);
+            if (neckToDel == null)
+                return null;  //Necklace does not exist
 
-            //Delete Customer, always gives null response, NonSuccess response errors are thrown
-            await SendRequestAsync<Customer>(url, HttpMethod.Delete, _headers);
-            return cusToDel;
+            //Delete Necklace, always gives null response, NonSuccess response errors are thrown
+            await SendRequestAsync<Necklace>(url, HttpMethod.Delete, _headers);
+            return neckToDel;
         }
     }
 }
