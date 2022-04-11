@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using SeidoDbWebApiConsumerMVC.Models;
+using NecklaceModels;
 
 namespace SeidoDbWebApiConsumerMVC.Services
 {
@@ -13,7 +13,7 @@ namespace SeidoDbWebApiConsumerMVC.Services
 
         public SeidoDbHttpService()
         {
-            _baseUri = new Uri("https://localhost:5001");
+            _baseUri = new Uri("https://localhost:44340");
             //_baseUri = new Uri("http://localhost:5000");
             _headers = new Dictionary<string, string>();
         }
