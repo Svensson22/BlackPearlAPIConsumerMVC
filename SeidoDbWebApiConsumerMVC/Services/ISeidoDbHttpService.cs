@@ -7,12 +7,12 @@ namespace SeidoDbWebApiConsumerMVC.Services
 {
     public interface ISeidoDbHttpService
     {
-        Task<IEnumerable<ICustomer>> GetCustomersAsync();
-        Task<ICustomer> GetCustomerAsync(Guid custId);
+        Task<IEnumerable<Necklace>> GetNecklacesAsync();
+        Task<Necklace> GetNecklaceAsync(int neckId);
 
-        Task<ICustomer> UpdateCustomerAsync(Customer cus);
+        Task<Necklace> UpdateNecklaceAsync(Necklace neck);
 
-        Task<ICustomer> CreateCustomerAsync(Customer cus);
-        Task<ICustomer> DeleteCustomerAsync(Guid custId);
+        Task<Necklace> CreateNecklaceAsync(Necklace neck);
+        Task<Necklace> DeleteNecklaceAsync(int neckId);
     }
 }
