@@ -9,12 +9,12 @@ namespace SeidoDb.Web
 		{
 		}
 		public void ConfigureServices(IServiceCollection services)
-        {
-			services.AddRazorPages();           //Enables Razorpages
+		{
+			services.AddRazorPages(); 
 			services.AddScoped<ISeidoDbHttpService, SeidoDbHttpService>();
 		}
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
+		{
 			if (!env.IsDevelopment())
 			{
 				app.UseHsts();
@@ -27,8 +27,8 @@ namespace SeidoDb.Web
 
 			app.UseEndpoints(endpoint =>
 			{
-				endpoint.MapRazorPages();		//Enables Razorpages
-				endpoint.MapGet("/hello", () => $"Hello World at {DateTime.Now}");
+				endpoint.MapRazorPages();       
+												
 			});
 		}
 	}

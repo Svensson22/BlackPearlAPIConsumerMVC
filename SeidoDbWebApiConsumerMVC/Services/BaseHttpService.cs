@@ -15,7 +15,7 @@ namespace SeidoDbWebApiConsumerMVC.Services
                IDictionary<string, string> headers = null,
                T requestData = default(T))
         {
-           var result = default(T);
+            var result = default(T);
 
             // Default to GET
             var method = httpMethod ?? HttpMethod.Get;
@@ -56,7 +56,6 @@ namespace SeidoDbWebApiConsumerMVC.Services
                     }
                 }
             }
-
             return result;
         }
     }

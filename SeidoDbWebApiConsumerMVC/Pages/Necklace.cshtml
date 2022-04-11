@@ -1,0 +1,19 @@
+﻿@page
+@model SeidoDbWebApiConsumerMVC.Pages.NecklaceModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+ <section>
+     <div class="box">
+<div class="row">
+    <table class="table">
+        <thead class="thead-inverse">
+            <tr><th>Necklaces</th></tr>
+        </thead>
+        <tbody>
+                @foreach (var neck in Model.Necklaces)
+                {<tr><td>@neck</td></tr>}
+        </tbody>
+    </table>
+    </div>
+</div>
+</section>
