@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using SeidoDbWebApiConsumerMVC.Models;
+using NecklaceModels;
 
 namespace SeidoDbWebApiConsumerMVC.Services
 {
