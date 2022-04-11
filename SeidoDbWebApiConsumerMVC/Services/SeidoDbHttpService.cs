@@ -26,7 +26,7 @@ namespace SeidoDbWebApiConsumerMVC.Services
             return response;
         }
 
-        public async Task<Necklace> GetNecklacesAsync(int neckId)
+        public async Task<Necklace> GetNecklaceAsync(int neckId)
         {
             var url = new Uri(_baseUri, $"/api/necklace/{neckId}");
             var response = await SendRequestAsync<Necklace>(url, HttpMethod.Get, _headers);
