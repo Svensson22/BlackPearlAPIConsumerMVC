@@ -1,0 +1,38 @@
+﻿@page
+@model SeidoDbWebApiConsumerMVC.Pages.NecklacesModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Necklace List";
+}
+<div class="row">
+    <h1 class="display-2">@ViewData["Title"]</h1>
+    <table class="table">
+        <thead class="thead-inverse">
+            <tr><th>Necklace Detail</th></tr>
+        </thead>
+        <tbody>
+            @if (Model.Necklaces != null)
+            {
+                @foreach (var neck in Model.Necklaces)
+                {
+                    <tr>
+                        <td>@neck</td>
+                        <form method="post">
+                            <td><button class="btn btn-default" asp-page-handler="delete" asp-route-id="@neck.NecklaceID.ToString()">Delete</button></td>
+                            
+                        </form>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col">
+               
+            </div>
+        </div>
+    </div>
+</div>

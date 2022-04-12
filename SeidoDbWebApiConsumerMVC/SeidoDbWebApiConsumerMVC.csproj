@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Customers.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Customers.cshtml" />
     <Content Remove="wwwroot\" />
   </ItemGroup>
   <ItemGroup>
@@ -15,5 +20,16 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="NecklaceCRUD">
+      <HintPath>..\..\BlackPearlAPI\Dependencies\NecklaceCRUD.dll</HintPath>
+    </Reference>
+    <Reference Include="NecklaceDB">
+      <HintPath>..\..\BlackPearlAPI\Dependencies\NecklaceDB.dll</HintPath>
+    </Reference>
+    <Reference Include="NecklaceModels">
+      <HintPath>..\..\BlackPearlAPI\Dependencies\NecklaceModels.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
