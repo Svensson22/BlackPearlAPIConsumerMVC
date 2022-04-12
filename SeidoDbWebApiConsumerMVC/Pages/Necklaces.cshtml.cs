@@ -9,11 +9,8 @@ namespace SeidoDbWebApiConsumerMVC.Pages
     {
         ISeidoDbHttpService _httpService;
 
-
         public IEnumerable<Necklace> Necklaces { get; private set; }
 
-
-        [BindProperty]
         public Necklace NewNecklace { get; set; }
 
         public async Task OnGet()
@@ -21,7 +18,6 @@ namespace SeidoDbWebApiConsumerMVC.Pages
             Necklaces = await _httpService.GetNecklacesAsync();
             Necklaces = Necklaces.Take(10);
         }
-
 
         public async Task<IActionResult> OnPostDelete(string id)
         {
@@ -31,9 +27,6 @@ namespace SeidoDbWebApiConsumerMVC.Pages
 
             return RedirectToPage("/necklaces");
         }
-
-
-
 
        public NecklacesModel(ISeidoDbHttpService service)
         {

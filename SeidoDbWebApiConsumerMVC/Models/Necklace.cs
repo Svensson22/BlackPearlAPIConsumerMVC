@@ -16,6 +16,7 @@ namespace NecklaceModels
         public int NecklaceID { get; set; }
         public string Country { get; set; }
         public string NecklaceType { get; set; }
+        public List<Pearl> Pearls { get; set; }
 
         public override string ToString() => $"{NecklaceID} {Country} {NecklaceType}";
     }
